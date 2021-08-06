@@ -1,6 +1,6 @@
 # Run as Administrator
 New-Item -Path 'C:\Program Files\Toxik' -ItemType Directory
-Invoke-WebRequest -Uri 'https://download1080.mediafire.com/qfw8u1l7z4lg/5ag1zcev6fd878c/Jokes.zip' -OutFile 'C:\Program Files\Toxik\Jokes.zip'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/maverick-dev-55/joke-app/main/dist/Jokes.zip' -OutFile 'C:\Program Files\Toxik\Jokes.zip'
 Expand-Archive -LiteralPath 'C:\Program Files\Toxik\Jokes.zip' -DestinationPath 'C:\Program Files\Toxik\'
 Remove-Item -Path 'C:\Program Files\Toxik\Jokes.zip'
 $WshShell = New-Object -comObject WScript.Shell

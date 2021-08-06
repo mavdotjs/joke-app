@@ -3,6 +3,7 @@ from jokeapi import Jokes
 from tkinter import *
 import sys
 import os
+import win32com.client
 from tkinter import messagebox
 window = Tk()
 textmsg = Label(window)
@@ -13,7 +14,14 @@ if sys.argv[0].split('.')[1] == 'py':
 	p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png')
 elif sys.argv[0].split('.')[1] == 'exe':
 	print('exe')
-	p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png\\icon.png')
+	try:
+		p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png\\icon.png')
+	except:
+		shell = win32com.client.Dispatch('WScript.Shell')
+		shortcut = shell.CreateShortCut(f'{os.getcwd()}\\Jokes.lnk')
+		shortcut = str(shortcut.Targetpath).split('\\')
+		shortcut.pop(-1)
+		p1 = PhotoImage(file = f'{'\\'.join(shortcut)}\\icon.png\\icon.png')
 window.iconphoto(False, p1)
 message = ''
 flags = []

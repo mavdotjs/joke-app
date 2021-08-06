@@ -1,5 +1,5 @@
 ('C:\\Users\\RedRa\\Documents\\vscode\\joke-app\\build\\Jokes\\Jokes.exe',
- False,
+ True,
  False,
  True,
  'icon.ico',
@@ -54,7 +54,7 @@
  [],
  False,
  False,
- 1628258548,
- [('runw.exe',
-   'C:\\Users\\RedRa\\AppData\\Roaming\\Python\\Python39\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\runw.exe',
+ 1628259884,
+ [('run.exe',
+   'C:\\Users\\RedRa\\AppData\\Roaming\\Python\\Python39\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])
