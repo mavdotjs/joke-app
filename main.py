@@ -7,9 +7,12 @@ from tkinter import messagebox
 window = Tk()
 textmsg = Label(window)
 boxmessage = StringVar()
+print(sys.argv[0].split('.')[1])
 if sys.argv[0].split('.')[1] == 'py':
+	print('py')
 	p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png')
 elif sys.argv[0].split('.')[1] == 'exe':
+	print('exe')
 	p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png\\icon.png')
 window.iconphoto(False, p1)
 message = ''
