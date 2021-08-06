@@ -21,7 +21,9 @@ elif sys.argv[0].split('.')[1] == 'exe':
 		shortcut = shell.CreateShortCut(f'{os.getcwd()}\\Jokes.lnk')
 		shortcut = str(shortcut.Targetpath).split('\\')
 		shortcut.pop(-1)
-		p1 = PhotoImage(file = f'{'\\'.join(shortcut)}\\icon.png\\icon.png')
+		backslash = '\\'
+		print('\\'.join(shortcut))
+		p1 = PhotoImage(file = f'''{backslash.join(shortcut)}\icon.png\icon.png''')
 window.iconphoto(False, p1)
 message = ''
 flags = []
