@@ -23,7 +23,7 @@ elif sys.argv[0].split('.')[1] == 'exe':
 		shortcut = open('target.txt').read()
 		backslash = '\\'
 		os.remove('target.txt')
-		p1 = PhotoImage(file = f'''{backslash.join(shortcut)}\icon.png\icon.png''')
+		p1 = PhotoImage(file = f'{backslash.join(shortcut)}\\icon.png\\icon.png')
 window.iconphoto(False, p1)
 message = ''
 flags = []
