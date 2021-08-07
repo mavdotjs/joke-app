@@ -11,19 +11,13 @@ boxmessage = StringVar()
 print(sys.argv[0].split('.')[1])
 if sys.argv[0].split('.')[1] == 'py':
 	print('py')
-	p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png')
+	p1 = PhotoImage(file = f'icon.png')
 elif sys.argv[0].split('.')[1] == 'exe':
 	print('exe')
 	try:
-		p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png\\icon.png')
+		p1 = PhotoImage(file = f'icon.png\\icon.png')
 	except:
-		os.system('powershell $sh = New-Object -ComObject WScript.Shell')
-		os.system(f'powershell $target = $sh.CreateShortcut("C:Users\\{os.getlogin()}\\Desktop\\Jokes.lnk").TargetPath')
-		os.system('powershell $target >> target.txt')
-		shortcut = open('target.txt').read()
-		backslash = '\\'
-		os.remove('target.txt')
-		p1 = PhotoImage(file = f'{backslash.join(shortcut)}\\icon.png\\icon.png')
+		p1 = PhotoImage(file = f'C:\\Program Files\\Toxik\\Jokes\\icon.png\\icon.png')
 window.iconphoto(False, p1)
 message = ''
 flags = []
