@@ -17,12 +17,12 @@ elif sys.argv[0].split('.')[1] == 'exe':
 	try:
 		p1 = PhotoImage(file = f'{os.getcwd()}\\icon.png\\icon.png')
 	except:
-		shell = win32com.client.Dispatch('WScript.Shell')
-		shortcut = shell.CreateShortCut(f'{os.getcwd()}\\Jokes.lnk')
-		shortcut = str(shortcut.Targetpath).split('\\')
-		shortcut.pop(-1)
+		os.system('powershell $sh = New-Object -ComObject WScript.Shell')
+		os.system(f'powershell $target = $sh.CreateShortcut("C:Users\\{os.getlogin()}\\Desktop\\Jokes.lnk").TargetPath')
+		os.system('powershell $target >> target.txt')
+		shortcut = open('target.txt').read()
 		backslash = '\\'
-		print('\\'.join(shortcut))
+		os.remove('target.txt')
 		p1 = PhotoImage(file = f'''{backslash.join(shortcut)}\icon.png\icon.png''')
 window.iconphoto(False, p1)
 message = ''
